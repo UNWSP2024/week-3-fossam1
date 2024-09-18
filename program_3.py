@@ -1,3 +1,7 @@
+# Samuel Foss
+# Program 3 Shipping Charges
+# 9/18/2024
+
 # Programming Excersize 3-13
 
 # The Fast Freight Shipping Company charges the following rates:
@@ -13,13 +17,20 @@ def weight_conversion(weight):
     # Calculate the shipping charge.
     shippingCost = 0.0
     ######################
-    # WRITE YOUR CODE HERE
+    if weight <= 2 : shippingCost = 1.5
+
+    if weight > 2 and weight <= 6 : shippingCost = 3
+
+    if weight > 6 and weight <= 10 : shippingCost = 4
+
+    if weight > 10 : shippingCost = 4.75
     ######################
-    
+
     return shippingCost
 
+
 #### This piece of the code has been done for you,
-#### you only need to worry about the actual shipping 
+#### you only need to worry about the actual shipping
 #### charge logic in the weight_conversion function
 if __name__ == '__main__':
     # Local variables
@@ -29,4 +40,10 @@ if __name__ == '__main__':
     weight = float(input('Enter the weight of the package: '))
     # Display the shipping charge.
     shippingCost = weight_conversion(weight)
-    print ('Shipping charge: $', format(shippingCost, '.2f'))
+    print('Shipping charge: $', format(shippingCost, '.2f'))
+    
+    #output
+    #Enter the weight of the package: 4
+    #Shipping charge: $ 3.00
+
+    #Process finished with exit code 0
